@@ -1,0 +1,21 @@
+<section class="services-section" id="services">
+  <div class="container">
+
+    <h2 class="section-title">Nuestros Servicios</h2>
+    <p class="section-subtitle">Todo lo que tu mascota necesita en un solo lugar</p>
+
+    <div class="services-grid">
+      <div class="service-card" *ngFor="let s of services">
+        <div class="card-tag" *ngIf="s.tag">{{ s.tag }}</div>
+        <div class="card-icon">{{ s.icon }}</div>
+        <h3 class="card-title">{{ s.title }}</h3>
+        <p class="card-desc">{{ s.desc }}</p>
+        <div class="card-footer">
+          <span class="card-price">{{ s.price }}</span>
+          <button class="card-btn">Más info</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

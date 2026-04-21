@@ -1,0 +1,93 @@
+<section class="contact-section" id="contact">
+  <div class="container">
+
+    <!-- Información -->
+    <div class="contact-info">
+      <h2>¿Listo para adoptar?</h2>
+      <p>Completa el formulario y te contactamos en menos de 24 horas.</p>
+
+      <div class="info-list">
+        <div class="info-item">
+          <span class="info-icon">📍</span>
+          <span>Av. Salaverry 2220, Lima, Perú</span>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">📞</span>
+          <span>(01) 234-5678</span>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">📧</span>
+          <span>hola&#64;pawlove.pe</span>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">🕐</span>
+          <span>Lun – Sáb: 9:00am – 6:00pm</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulario -->
+    <div class="contact-form">
+
+      <div class="success-msg" *ngIf="submitted">
+        ✅ ¡Gracias! Te contactaremos muy pronto 🐾
+      </div>
+
+      <div class="error-msg" *ngIf="hasError">
+        ⚠️ Por favor completa todos los campos obligatorios (*).
+      </div>
+
+      <form (ngSubmit)="onSubmit()" *ngIf="!submitted">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nombre completo *</label>
+            <input type="text"
+                   [(ngModel)]="formData.name"
+                   name="name"
+                   placeholder="Tu nombre" />
+          </div>
+          <div class="form-group">
+            <label>Correo electrónico *</label>
+            <input type="email"
+                   [(ngModel)]="formData.email"
+                   name="email"
+                   placeholder="tu@correo.com" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Teléfono</label>
+            <input type="tel"
+                   [(ngModel)]="formData.phone"
+                   name="phone"
+                   placeholder="999 888 777" />
+          </div>
+          <div class="form-group">
+            <label>¿Qué mascota te interesa?</label>
+            <select [(ngModel)]="formData.petType" name="petType">
+              <option value="">Selecciona...</option>
+              <option *ngFor="let pet of petTypes" [value]="pet">{{ pet }}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group full">
+          <label>Mensaje *</label>
+          <textarea [(ngModel)]="formData.message"
+                    name="message"
+                    rows="4"
+                    placeholder="Cuéntanos sobre ti y por qué quieres adoptar...">
+          </textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          Enviar mensaje 🐾
+        </button>
+
+      </form>
+    </div>
+
+  </div>
+</section>

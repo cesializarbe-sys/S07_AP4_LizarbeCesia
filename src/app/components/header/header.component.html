@@ -1,0 +1,26 @@
+<header class="header">
+  <div class="container">
+
+    <div class="logo">
+      <span class="logo-icon">🐾</span>
+      <span class="logo-text">PawLove</span>
+    </div>
+
+    <nav class="nav" [class.open]="menuOpen">
+      <a class="nav-link"
+         *ngFor="let link of navLinks"
+         (click)="scrollTo(link.id)">
+        {{ link.label }}
+      </a>
+    </nav>
+
+    <button class="cta-btn" (click)="scrollTo('contact')">
+      Adoptar ahora 🐶
+    </button>
+
+    <button class="hamburger" (click)="toggleMenu()">
+      {{ menuOpen ? '✕' : '☰' }}
+    </button>
+
+  </div>
+</header>

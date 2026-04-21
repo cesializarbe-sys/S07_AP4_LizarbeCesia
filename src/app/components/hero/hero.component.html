@@ -1,0 +1,38 @@
+<section class="hero" id="hero">
+
+  <div class="hero-content">
+    <div class="badge">🌟 El hogar perfecto para tu mascota</div>
+
+    <h1 class="hero-title">
+      Encuentra a tu <span class="highlight">compañero</span> ideal
+    </h1>
+
+    <p class="hero-desc">
+      En PawLove conectamos mascotas que necesitan un hogar con familias llenas
+      de amor. También ofrecemos peluquería, veterinaria y tienda especializada.
+    </p>
+
+    <div class="hero-buttons">
+      <button class="btn-primary"   (click)="scrollTo('contact')">🐾 Quiero adoptar</button>
+      <button class="btn-secondary" (click)="scrollTo('services')">Ver servicios</button>
+    </div>
+
+    <div class="stats">
+      <div class="stat" *ngFor="let stat of stats">
+        <span class="stat-value">{{ stat.value }}</span>
+        <span class="stat-label">{{ stat.label }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="circle-bg">
+      <span class="big-emoji">🐕</span>
+    </div>
+    <div class="floating float-1">🐱</div>
+    <div class="floating float-2">🦴</div>
+    <div class="floating float-3">🐾</div>
+    <div class="floating float-4">❤️</div>
+  </div>
+
+</section>

@@ -1,0 +1,50 @@
+<footer class="footer">
+  <div class="footer-main">
+
+    <div class="footer-brand">
+      <div class="footer-logo">🐾 PawLove</div>
+      <p>Conectamos mascotas que necesitan un hogar con familias llenas de amor, desde 2014.</p>
+      <div class="socials">
+        <span class="social-btn"
+              *ngFor="let s of socials"
+              [title]="s.label">
+          {{ s.icon }}
+        </span>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Navegación</h4>
+      <ul>
+        <li *ngFor="let link of links">
+          <a (click)="scrollTo(link.id)">{{ link.label }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Servicios</h4>
+      <ul>
+        <li>Adopción</li>
+        <li>Peluquería</li>
+        <li>Veterinaria</li>
+        <li>Tienda Pet</li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul>
+        <li>📍 Av. Salaverry 2220, Lima</li>
+        <li>📞 (01) 234-5678</li>
+        <li>📧 hola&#64;pawlove.pe</li>
+        <li>🕐 Lun – Sáb: 9am – 6pm</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© {{ currentYear }} PawLove. Todos los derechos reservados. Hecho con ❤️ para las mascotas.</p>
+  </div>
+</footer>
